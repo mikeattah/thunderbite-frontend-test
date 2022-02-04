@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="hydrated" lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+
+    <title>Thunderbite Frontend Test | Wheel</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon.ico" />
+
+    <!-- PixiJS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.10/pixi.min.js"
+      integrity="sha512-q934XBdvzPUGro9tUco1Z5dMohM/lg1T1lem+XXigGYbgYEZwwoLgWff2H7XZkruXrZ8KSzVUoxNDkIf1Rbb/A=="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&family=Montserrat:wght@400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="wheel.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html"><span>Showdown</span></a>
+          </li>
+          <li>
+            <a href="wheel.html"><span>Wheel</span></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main></main>
+    <footer>
+      <p>
+        Built by
+        <a
+          href="https://github.com/mikeattah/thunderbite-frontend-test"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Mike Attah</a
+        >
+        for
+        <a
+          href="https://thunderbite.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Thunderbite</a
+        >
+      </p>
+    </footer>
+    <script src="wheel.js"></script>
+    <script type="text/javascript">
+      //The `randomInt` helper function
+      function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+    </script>
+  </body>
+</html>

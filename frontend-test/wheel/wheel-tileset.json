@@ -1,0 +1,36 @@
+{"frames": {
+
+"btn-spin.png":
+{
+	"frame": {"x":0,"y":0,"w":360,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":80},
+	"sourceSize": {"w":360,"h":80}
+},
+"marker.png":
+{
+	"frame": {"x":360,"y":0,"w":50,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":110},
+	"sourceSize": {"w":50,"h":110}
+},
+"wheel.png":
+{
+	"frame": {"x":0,"y":110,"w":650,"h":650},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":650,"h":650},
+	"sourceSize": {"w":650,"h":650}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "wheel-tileset.png",
+	"format": "RGBA8888",
+	"size": {"w":650,"h":760},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:51ee5bb18256ef5f00f95797a5f84d95:0f1ec4926e4290366187ad4dac9b0036:74e816f5c03c0f8a1489baa37bd9c448$"
+}
+}
