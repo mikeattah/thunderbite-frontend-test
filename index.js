@@ -24,11 +24,6 @@ const app = new Application({
   autoDensity: true,
 });
 
-// Make the app view responsive to window resizing
-window.addEventListener("resize", () => {
-  app.renderer.resize(window.innerWidth, window.innerHeight * 0.901);
-});
-
 // Add the app to the DOM
 canvas.appendChild(app.view);
 
@@ -55,7 +50,8 @@ let id,
   vegas,
   w1,
   w2,
-  showdownSprites;
+  showdownSprites,
+  ratio;
 
 // Define the `setup` function
 function setup() {
@@ -204,7 +200,7 @@ function setup() {
     TweenMax.to([vegas, slots], 0.1, { alpha: 1 }).delay(1.8);
 
     // Show bolt sprite
-    TweenMax.to(bolt, 0.5, { alpha: 1 }).delay(3);
+    TweenMax.to(bolt, 0.5, { alpha: 1 }).delay(4);
 
     // flickering effect on bolt sprite
     app.ticker.add(() => {
@@ -233,6 +229,24 @@ function setup() {
 
   animate();
 }
+
+// Make the app view responsive to window resizing
+window.addEventListener("resize", () => {
+  // Determine which screen dimension is most constrained
+  ratio = Math.min(
+    window.innerWidth / winWidth,
+    window.innerHeight / winHeight
+  );
+
+  // Scale the view appropriately to fill that dimension
+  container.scale.x = container.scale.y = ratio;
+
+  // Update the renderer dimensions
+  app.renderer.resize(
+    Math.ceil(winWidth * ratio),
+    Math.ceil(winHeight * ratio)
+  );
+});
 
 //The `randomInt` helper function
 function randomInt(min, max) {

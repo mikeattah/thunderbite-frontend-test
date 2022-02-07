@@ -21,12 +21,8 @@ const app = new Application({
   height: winHeight,
   backgroundColor: 16777215,
   resolution: window.devicePixelRatio,
+  autoResize: true,
   autoDensity: true,
-});
-
-// Make the app view responsive to window resizing
-window.addEventListener("resize", () => {
-  app.renderer.resize(window.innerWidth, window.innerHeight * 0.901);
 });
 
 // Add the app to the DOM
@@ -36,7 +32,7 @@ canvas.appendChild(app.view);
 Loader.add("frontend-test/wheel/wheel-tileset.json").load(setup);
 
 // Define variables that might be used in more than one function
-let state, id, btnSpin, marker, wheel, canRotate, num, time;
+let state, id, container, btnSpin, marker, wheel, canRotate, num, time, ratio;
 
 // Game state
 state = play;
@@ -47,7 +43,7 @@ function setup() {
   id = Resources["frontend-test/wheel/wheel-tileset.json"].textures;
 
   // Create container
-  const container = new Container();
+  container = new Container();
 
   // Create the wheel sprite
   wheel = new Sprite(id["wheel.png"]);
@@ -94,6 +90,24 @@ function setup() {
   // Add container to the stage
   app.stage.addChild(container);
 }
+
+// Make the app view responsive to window resizing
+window.addEventListener("resize", () => {
+  // Determine which screen dimension is most constrained
+  ratio = Math.min(
+    window.innerWidth / winWidth,
+    window.innerHeight / winHeight
+  );
+
+  // Scale the view appropriately to fill that dimension
+  container.scale.x = container.scale.y = ratio;
+
+  // Update the renderer dimensions
+  app.renderer.resize(
+    Math.ceil(winWidth * ratio),
+    Math.ceil(winHeight * ratio)
+  );
+});
 
 function gameLoop() {
   // Spin the wheel and stop on a random number based on position data
