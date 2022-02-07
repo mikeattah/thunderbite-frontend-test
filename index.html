@@ -36,7 +36,7 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&family=Montserrat:wght@400&display=swap"
       rel="stylesheet"
@@ -78,136 +78,6 @@
         >
       </p>
     </footer>
-    <script type="text/javascript">
-      // width and height allocated to element containing the app in the DOM
-      const winWidth = window.innerWidth;
-      const winHeight = window.innerHeight * 0.901;
-      const screenScaleRatio = 1440 / 545;
-
-      // Create element to attach app to DOM
-      const appContainer = document.querySelector("#app");
-
-      // Aliases
-      const Application = PIXI.Application,
-        Container = PIXI.Container,
-        ParticleContainer = PIXI.ParticleContainer,
-        Loader = PIXI.Loader.shared,
-        Resources = PIXI.Loader.shared.resources,
-        TextureCache = PIXI.utils.TextureCache,
-        Sprite = PIXI.Sprite,
-        Rectangle = PIXI.Rectangle;
-
-      // Create the application helper
-      // 16777215, 1839942
-      const app = new Application({
-        width: winWidth,
-        height: winHeight,
-        backgroundColor: 1117219,
-        resolution: window.devicePixelRatio,
-        autoDensity: true,
-      });
-
-      // Make the app view responsive to window resizing
-      window.addEventListener("resize", () => {
-        app.renderer.resize(window.innerWidth, window.innerHeight * 0.901);
-      });
-
-      // Add the app to the DOM
-      appContainer.appendChild(app.view);
-
-      // load tileset JSON file and run the `setup` function when it's done
-      Loader.add("frontend-test/showdown/showdown-tileset.json").load(setup);
-
-      // Define variables that might be used in more than one function
-      let id,
-        boltOff,
-        bolt,
-        d,
-        h,
-        header,
-        mustDrop,
-        n,
-        o1,
-        o2,
-        s,
-        showdownOff,
-        slots,
-        vegas,
-        w1,
-        w2;
-
-      // Define the `setup` function
-      function setup() {
-        // Create an alias for all the texture atlas frames
-        id = Resources["frontend-test/showdown/showdown-tileset.json"].textures;
-
-        // Create container
-        const showdownContainer = new Container();
-
-        // Move container to center
-        // showdownContainer.x = app.screen.width / 2;
-        // showdownContainer.y = app.screen.sheight / 2;
-
-        // Scale container to fit screen
-        // showdownContainer.scale.set(screenScaleRatio, screenScaleRatio);
-
-        // Create the header sprite
-        header = new Sprite(id["header.png"]);
-        header.x = app.screen.width / 2;
-        header.y = app.screen.height / 2;
-        header.anchor.set(0.5);
-
-        // Create the showdown-off sprite
-        showdownOff = new Sprite(id["showdown-off.png"]);
-        showdownOff.x = app.screen.width / 2;
-        showdownOff.y = app.screen.height / 2;
-        showdownOff.anchor.set(0.5);
-        showdownOff.scale.set(1.5, 1.5);
-
-        // Create the vegas sprite
-        vegas = new Sprite(id["vegas@2x.png"]);
-        vegas.visible = false;
-
-        // Create the slots sprite
-        slots = new Sprite(id["slots@2x.png"]);
-        slots.visible = false;
-
-        // Create the bolt sprite
-        bolt = new Sprite(id["bolt@2x.png"]);
-        bolt.visible = false;
-
-        // Create the showdown colored letters sprites
-        s = new Sprite(id["s@2x.png"]);
-        s.scale.set(0.75, 0.75);
-        s.anchor.set(0.5);
-        s.position.set(app.screen.width / 2 - 510, app.screen.height / 2 + 35);
-        h = new Sprite(id["h@2x.png"]);
-        o1 = new Sprite(id["o-1@2x.png"]);
-        w1 = new Sprite(id["w-1@2x.png"]);
-        d = new Sprite(id["d@2x.png"]);
-        o2 = new Sprite(id["o-2@2x.png"]);
-        w2 = new Sprite(id["w-2@2x.png"]);
-        n = new Sprite(id["n@2x.png"]);
-
-        // Create the "must drop" sprite
-        mustDrop = new Sprite(id["must_drop.png"]);
-
-        // Add sprites to container
-        showdownContainer.addChild(header);
-        showdownContainer.addChild(showdownOff);
-        showdownContainer.addChild(s);
-        showdownContainer.addChild(h);
-
-        // Center sprites in local container coordinates
-        // showdownContainer.pivot.x = showdownContainer.width / 2;
-        // showdownContainer.pivot.y = showdownContainer.height / 2;
-
-        // Add container to the stage
-        app.stage.addChild(showdownContainer);
-
-        function showSprites() {}
-      }
-    </script>
     <script src="index.js"></script>
   </body>
 </html>

@@ -4,7 +4,8 @@
   "description": "This repo contains my solution to Thunderbite Frontend Test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "mongoose-free-6.5.exe -p 8080",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/mikeattah/thunderbite-frontend-test/issues"
   },
-  "homepage": "https://github.com/mikeattah/thunderbite-frontend-test#readme"
+  "homepage": "https://github.com/mikeattah/thunderbite-frontend-test#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
 }

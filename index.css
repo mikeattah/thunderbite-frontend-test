@@ -27,7 +27,6 @@ header {
   margin: 0;
   padding: 0;
   background-color: #000;
-  border-bottom: 1px solid red;
 }
 
 nav {
@@ -88,7 +87,6 @@ footer {
   margin: 0;
   padding: 0 33px;
   background-color: #000;
-  border-top: 1px solid red;
 }
 
 footer p {
